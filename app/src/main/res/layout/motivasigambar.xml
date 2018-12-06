@@ -1,87 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:id="@+id/relatif1"
-        android:layout_height="wrap_content">
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_below="@+id/relatif1"
-        android:layout_width="match_parent"
+    <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
-        android:id="@+id/scroll1">
+        android:layout_width="match_parent">
 
-        <LinearLayout
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/motiv"/>
-                </LinearLayout>
-            </HorizontalScrollView>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="380dp"
-                android:src="@drawable/motiv1" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="230dp"
-                android:src="@drawable/motiv2" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:src="@drawable/motiv3" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:src="@drawable/motiv5" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="250dp"
-                android:src="@drawable/motiv10" />
-        </LinearLayout>
-    </ScrollView>
+    </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:src="@drawable/motiv6"
-        android:layout_alignParentBottom="true"
-        android:background="#000000"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include layout="@layout/content_tab" />
 
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

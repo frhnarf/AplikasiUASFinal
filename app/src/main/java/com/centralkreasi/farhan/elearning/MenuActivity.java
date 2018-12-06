@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -74,7 +73,6 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                // update login session ke FALSE dan mengosongkan nilai id dan username
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.putBoolean(MainActivity.session_status, false);
                 editor.putString(TAG_ID, null);

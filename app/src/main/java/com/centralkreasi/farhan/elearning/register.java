@@ -11,16 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.centralkreasi.farhan.elearning.app.AppController;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -112,7 +109,6 @@ public class register extends AppCompatActivity {
                     JSONObject jObj = new JSONObject(response);
                     success = jObj.getInt(TAG_SUCCESS);
 
-                    // Check for error node in json
                     if (success == 1) {
 
                         Log.e("Successfully Register!", jObj.toString());
@@ -129,7 +125,6 @@ public class register extends AppCompatActivity {
 
                     }
                 } catch (JSONException e) {
-                    // JSON error
                     e.printStackTrace();
                 }
 
@@ -149,7 +144,6 @@ public class register extends AppCompatActivity {
 
             @Override
             protected Map<String, String> getParams() {
-                // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("username", username);
                 params.put("password", password);
@@ -159,7 +153,6 @@ public class register extends AppCompatActivity {
 
         };
 
-        // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
     }
 
